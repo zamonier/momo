@@ -9,7 +9,7 @@
   </style>
 </head>
 <body>
-  <div class="timeline" id="exampleTimeline">
+  <div class="timeline" id="exampleTimeline" data-vertical-start-position="right" data-vertical-trigger="150px"> 
     <div class="timeline__wrap">
       <div class="timeline__items">
         <div class="timeline__item">
@@ -704,9 +704,8 @@
   </script>
   <script>
     timeline(document.querySelectorAll('.timeline'), {
-      forceVerticalMode: 800,
-      mode: 'horizontal',
-      visibleItems: 4
+      verticalStartPosition: 'right',
+      verticalTrigger: '150px'
     });
   </script>
 </body>
