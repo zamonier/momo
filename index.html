@@ -5,9 +5,50 @@
   <title>Momo</title>
 </head>
 <body>
-  <a href="who.html" target="contentFrame">Кто?</a>
-  <iframe name="contentFrame" width="100%" height="600" style="border:none;"></iframe>
-  <a href="when.html" target="contentFrame">Когда?</a>
-  <iframe name="contentFrame" width="100%" height="600" style="border:none;"></iframe>
-</body>
+  <style>
+    .tabs {
+      display: inline-flex;
+      border-bottom: 2px solid #ddd;
+      gap: 4px;
+    }
+    
+    .tab {
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #555;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      background: #f6f6f6;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    
+    .tab:hover {
+      background: #eee;
+    }
+    
+    .tab.active {
+      background: #fff;
+      color: #000;
+      border-bottom: 2px solid #fff;
+    }
+    
+    .tab-frame {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ddd;
+      border-radius: 0 6px 6px 6px;
+    }
+  </style>
+  <div class="tabs">
+    <a href="who.html" target="contentFrame" class="tab active">Кто?</a>
+    <a href="when.html" target="contentFrame" class="tab">Когда?</a>
+  </div>
+
+  <iframe name="contentFrame" class="tab-frame"></iframe>
+
+  <!-- <a href="who.html" target="contentFrame">Кто?</a> <a href="when.html" target="contentFrame">Когда?</a>
+  <iframe name="contentFrame" width="100%" height="600" style="border:none;"></iframe> -->
+  </body>
 </html>
