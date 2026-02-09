@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeline</title>
+  <style>
+    :root{--primary:#2b6cb0;--muted:#f3f4f6;--card:#ffffff}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--muted); color:#111; margin:0; padding:32px}
+    .container{max-width:900px;margin:0 auto}
+    h1{color:var(--primary);text-align:center}
+    .timeline{position:relative;padding:24px 0}
+    .timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(#ddd,#bbb);transform:translateX(-50%)}
+    .event{position:relative;width:50%;padding:12px 24px;box-sizing:border-box}
+    .event .card{background:var(--card);border-radius:8px;padding:12px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .event.left{left:0;text-align:right}
+    .event.right{left:50%}
+    .event .date{font-size:0.85rem;color:#666;margin-bottom:6px}
+    .circle{position:absolute;left:50%;width:14px;height:14px;background:var(--primary);border-radius:50%;top:20px;transform:translateX(-50%)}
+    .event.left .circle{transform:translate(-50%,-50%)}
+    .event.right .circle{transform:translate(-50%,-50%)}
+
+    /* Responsive */
+    @media(max-width:720px){
+      .event{width:100%;left:0;padding-left:48px;padding-right:16px;text-align:left}
+      .timeline::before{left:24px}
+      .circle{left:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Timeline</h1>
+    <p style="text-align:center;color:#555;">A simple vertical timeline component. Add, remove or reorder events as needed.</p>
+
+    <section class="timeline" aria-label="Project timeline">
+
+      <article class="event left" aria-labelledby="e1">
+        <div class="circle" aria-hidden="true"></div>
+        <div class="card" id="e1">
+          <div class="date">2026-02-01</div>
+          <h3>Project kickoff</h3>
+          <p>Initial planning, requirements gathered and repository created.</p>
+        </div>
+      </article>
+
+      <article class="event right" aria-labelledby="e2">
+        <div class="circle" aria-hidden="true"></div>
+        <div class="card" id="e2">
+          <div class="date">2026-02-05</div>
+          <h3>Design phase</h3>
+          <p>Wireframes and visual designs completed. Component structure proposed.</p>
+        </div>
+      </article>
+
+      <article class="event left" aria-labelledby="e3">
+        <div class="circle" aria-hidden="true"></div>
+        <div class="card" id="e3">
+          <div class="date">2026-02-09</div>
+          <h3>Timeline added</h3>
+          <p>Added a standalone timeline.html demonstrating a responsive timeline layout.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <p style="text-align:center;color:#777;font-size:0.9rem">Tip: Copy the .timeline markup into your app and style as needed. Replace static content with dynamic data where required.</p>
+  </div>
+</body>
+</html>
