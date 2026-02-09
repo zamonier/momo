@@ -34,17 +34,7 @@
 
   <script src="/dist/js/timeline.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var el = document.getElementById('exampleTimeline');
-      // Initialize timeline with default settings
-      if (window.jQuery) {
-        // If jQuery is present, use plugin
-        window.jQuery(el).timeline();
-      } else if (typeof timeline === 'function') {
-        // Otherwise call init function directly
-        timeline([el]);
-      }
-    });
+    timeline(document.querySelectorAll('.timeline'));
   </script>
 </body>
 </html>
